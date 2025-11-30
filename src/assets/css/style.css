@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Roboto', sans-serif;
+}
+
+:root {
+  --color-brand: #3498db;
+
+  --color-black: #000;
+  --color-black-hover: #35363f;
+
+  --color-white: #fff;
+
+  --color-danger: #e63946;
+  --color-danger-hover: #d62828;
+
+  --color-gray: #555;
+
+  --color-light-gray: #e0e0e0;
+  --color-success: #28a745;
+  --color-warning: #856404;
+
+  --color-table-header-bg: #f2f2f2;
+}
+
+/* Кнопки */
+.btn {
+  font-family: inherit;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn--primary {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+}
+
+.btn--danger {
+  background: var(--color-danger);
+  color: var(--color-white);
+}
+
+.btn--primary:hover {
+  background: var(--color-black-hover);
+}
+
+.btn--secondary:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.btn--danger:hover {
+  background: var(--color-danger-hover);
+}
+
+.action-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.action-btn.edit {
+  margin-right: 10px;
+}
+
+/* Формы */
+.form-group {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+label {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--color-gray);
+  margin-bottom: 0.4rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    background-color 0.2s;
+  background: #f7f7f7;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #99a1b3;
+  background: var(--color-white);
+}
+
+input.error,
+select.error,
+textarea.error {
+  border-color: var(--color-danger);
+}
+
+.error-text {
+  display: block;
+  color: var(--color-danger);
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+
+/* Модалки */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.modal-title {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: var(--color-gray);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+/* Таблицы */
+.list-view {
+  padding: 30px;
+  background: transparent;
+}
+
+.list-view--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.list-view--title {
+  font-size: 1.5rem;
+}
+
+.table-wrapper {
+  background: var(--color-white);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-light-gray);
+}
+
+.data-table th {
+  background: var(--color-table-header-bg);
+  color: var(--color-gray);
+  font-weight: 600;
+}
+
+/* Статусы */
+.status {
+  display: inline-block;
+  min-width: 100px;
+  padding: 7px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.status.new {
+  background: #e7f1ff;
+  color: #1a73e8;
+}
+
+.status.active {
+  background: #fff3cd;
+  color: var(--color-warning);
+}
+
+.status.done {
+  background: #e6f7e6;
+  color: var(--color-success);
+}
+
+.status.cancelled {
+  background: #f8d7da;
+  color: var(--color-danger);
+}
+
+.status-cell {
+  position: relative;
+  cursor: pointer;
+}
+
+.status-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.status-menu {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  background: var(--color-white);
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  min-width: 120px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  padding: 4px 0;
+}
+
+.status-option {
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.status-option:hover {
+  background: #f3f3f3;
+}
+
+/* Пустое состояние */
+
+.empty-state {
+  padding: 40px;
+  text-align: center;
+  border: 2px dashed #ddd;
+  border-radius: 12px;
+  background: #fafafa;
+}
+
+.empty-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.empty-sub {
+  color: #777;
+  margin-bottom: 16px;
+}
